@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <title>My Curriculum</title>
+        <script defer src="script.js"></script>
+        <script defer src="grading.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="minimized-content">       
+                <h1 class="minimized">Project Management</h1>
+                <h3 class="minimized">Project management for English teachers</h3>
+            </div>
+            <div class="tab-names">
+                <h2 class="active-tab">HOME</h2>
+                <h2>BOOKFINDER</h2>
+                <h2>CURRICULUM</h2>
+                <h2>GRADING</h2>
+            </div>
+        </header>
+        <div id="home" class="tab-content active-tab">
+            <img id="cats" src="./img/home/cats_under_table.jpg" alt="My cats">
+        </div>
+        <div id="bookfinder" class="tab-content">
+            <form id="search">
+                <label for="book-search">Search:</label>
+                <input type="text" id="nook-search" name="nook-search">
+            </form>
+            <div id="all-books">
+                <div class="book-listing">
+                    <div class="book-info">                   
+                        <h2>book title</h2>
+                        <p>author</p>
+                        <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
+                        <div class="overlay">
+                            <p>add book description here</p>
+                        </div>
+                    </div>
+                    
+                    <button>add book to curriculum</button>
+                </div>
+                <div class="book-listing">
+                    <div class="book-info">                
+                        <h2>book title</h2>
+                        <p>author</p>
+                        <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
+                        <div class="overlay">
+                            <p>add book description here</p>
+                        </div>
+                    </div>
+                    <button>add book to curriculum</button>
+                </div>
+            </div>
+        </div>
+        <div id="curriculum" class="tab-content">
+            <select id="book-options">
+                <option>add dropdown with all books from curriculum</option>
+            </select>            
+            <form id="add-assignment">
+                <label for="new-assignment-name">Name:</label>
+                <input type="text" id="new-assignment-name" name="new-assignment-name">
+                <label for="new-assignment-descr">Description:</label>
+                <input type="text" id="new-assignment-descr" name="new-assignment-descr">
+                <label for="new-assignment-start">Start Date:</label>
+                <input type="date" id="new-assignment-start" name="new-assignment-start">
+                <label for="new-assignment-due">Due Date:</label>
+                <input type="date" id="new-assignment-due" name="new-assignment-due">
+            </form>
+            <div id="edit-assignment-info">
+                <select id="assignment-options">
+                    <option>add dropdown with all assignments for selected book</option>
+                </select>
+                <form id="edit-assignment">
+                    <label for="edit-assignment-name">Name:</label>
+                    <input type="text" id="edit-assignment-name" name="edit-ssignment-name">
+                    <label for="edit-assignment-descr">Description:</label>
+                    <input type="text" id="edit-assignment-descr" name="edit-assignment-descr">
+                    <label for="edit-assignment-start">Start Date:</label>
+                    <input type="date" id="assignment-start" name="edit-assignment-start">
+                    <label for="edit-assignment-due">Due Date:</label>
+                    <input type="date" id="edit-assignment-due" name="edit-assignment-due">
+                </form>
+            </div>
+        </div>
+        <div id="grading" class="tab-content">
+            <select id="student-select">
+                <option>add dropdown with all students on roster</option>
+            </select>
+            <p>populate information for grading</p>
+        </div>
+        <footer>
+            <a href="https://www.instagram.com/brooke.buster">
+                <div><img src="./img/logos/Instagram_Glyph_Black.jpg" alt="Instagram Logo"></div>
+            </a>
+        </footer>
+    </body>
+</html>

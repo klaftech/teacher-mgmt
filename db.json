@@ -1,0 +1,74 @@
+{
+ "books": [
+  {
+   "id": 1,
+   "title": "Book",
+   "author": "Author",
+   "notes": "no notes",
+   "projects": [
+        {
+            "id": 1,
+            "description": "description",
+            "startDate": 0,
+            "dueDate:": 0
+        },
+        {
+            "id": 1,
+            "description": "description",
+            "startDate": 0,
+            "dueDate:": 0
+        }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Book",
+    "author": "Author",
+    "notes": "no notes",
+    "projects": [
+         {
+             "id": 1,
+             "description": "description",
+             "startDate": 0,
+             "dueDate:": 0
+         },
+         {
+             "id": 1,
+             "description": "description",
+             "startDate": 0,
+             "dueDate:": 0
+         }
+    ]
+  }
+ ],
+ "roster": [
+    {
+     "id": 1,
+     "firstName": "Jacqueline",
+     "lastName": "Trapp",
+     "projects":
+      [
+        {"id": 1,
+         "grade": 8,
+         "comments": "comments"},
+         {"id": 1,
+         "grade": 6,
+         "comments": "comments"}
+      ]
+    },
+    {
+     "id": 2,
+     "firstName": "Jessie",
+     "lastName": "Trapp",
+     "projects":
+      [
+        {"id": 1,
+         "grade": 10,
+         "comments": "comments"},
+         {"id": 1,
+         "grade": 5,
+         "comments": "comments"}
+      ]
+    }
+  ]
+}
