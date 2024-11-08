@@ -9,7 +9,7 @@ const coverImgUrl = "https://covers.openlibrary.org"
 function getJSON(url){
     const requestObj = {
         method: 'GET',
-        redirect: 'follow'
+        //redirect: 'follow'
     }
     return fetch(url,requestObj)
     .then((response) => response.json())
@@ -22,13 +22,33 @@ async function fetchImage(url) {
         img.onload = () => res(img);
         img.onerror = e => rej(e);
         img.src = url;
+        //bookImgDiv.append(img)
     });
+    // let img
+    // return new Promise((res, rej) => {
+    //     img.onload = () => res(img);
+    //     img.onerror = e => rej(e);
+    //     //img.src = url;
+    //     img = url
+    // });
 }
 
 
 const getBookCoverImage = (coverId) => {
     const coverUrl = `${coverImgUrl}/b/id/${coverId}-M.jpg`
-    return getJSON(coverUrl)
+    //return getJSON(coverUrl)
+    
+    const requestObj = {
+        method: 'GET',
+        redirect: 'follow'
+    }
+    return fetch(url,requestObj)
+    .then((response) => 
+        //if(response.okresponse.json())
+    {
+        console.log(response)
+        response.json()
+    })
     .then((data) => {
         console.log(data)
         //data.forEach(renderBook(data))
@@ -44,23 +64,9 @@ const getBookCoverImage = (coverId) => {
 
 }
 
-const renderBook = async (book) => {
+const renderBook = (book) => {
     console.log(book)
-    /*
-    <div class="book-listing">
-        <div class="book-info">                   
-            <h2>book title</h2>
-            <p>author</p>
-            <img src="./img/about-me/hiking.jpg" alt="Going for a hike">
-            <div class="overlay">
-                <p>add book description here</p>
-            </div>
-        </div>
-        
-        <button>add book to curriculum</button>
-    </div>
-    */
-    
+
     const bookListing = document.createElement("div")
     bookListing.classList.add("book-listing")
 
@@ -72,17 +78,24 @@ const renderBook = async (book) => {
     
     const bookTitle = document.createElement("h2")
     const bookAuthor = document.createElement("p")
-    //const bookImg = document.createElement("img")
+    const bookImg = document.createElement("img")
     const bookImgDiv = document.createElement("div")
     
     bookTitle.innerText = book.title
     bookAuthor.innerText = book.author_name[0]
 
-    const bookImg = await fetchImage('https://covers.openlibrary.org/b/id/12547191-L.jpg');
+    getJSON(`${coverImgUrl}/b/id/${book.cover_i}.json`)
+    .then((data) => {
+        console.log(data.source_url)
+        bookImg.src = data.source_url
+    })
+    //bookImgDiv.append(await fetchImage('https://covers.openlibrary.org/b/id/12547191-L.jpg'))
+    //console.log(await fetchImage('https://covers.openlibrary.org/b/id/12547191-L.jpg'))
     //console.log(img)
     //const w = img.width;
     //const h = img.height;
     //bookImg.src = getBookCoverImage(book.cover_i)
+    //bookImg.src = bookUrl
     bookImg.alt = `${book.title} cover image`
     
     
