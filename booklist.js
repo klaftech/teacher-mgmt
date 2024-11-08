@@ -72,8 +72,20 @@ const renderBook = async (book) => {
     
     const bookTitle = document.createElement("h2")
     const bookAuthor = document.createElement("p")
-    const bookImg = document.createElement("img")
+    //const bookImg = document.createElement("img")
     const bookImgDiv = document.createElement("div")
+    
+    bookTitle.innerText = book.title
+    bookAuthor.innerText = book.author_name[0]
+
+    const bookImg = await fetchImage('https://covers.openlibrary.org/b/id/12547191-L.jpg');
+    //console.log(img)
+    //const w = img.width;
+    //const h = img.height;
+    //bookImg.src = getBookCoverImage(book.cover_i)
+    bookImg.alt = `${book.title} cover image`
+    
+    
     bookImgDiv.classList.add("overlay")
     bookImgDiv.append(bookImg)
     
@@ -83,16 +95,6 @@ const renderBook = async (book) => {
     bookListing.append(bookInfo)
     bookListing.append(curriculumBtn)
     bookMenu.append(bookListing)
-    
-    bookTitle.innerText = book.title
-    bookAuthor.innerText = book.author_name[0]
-
-    const img = await fetchImage('https://covers.openlibrary.org/b/id/12547191-L.jpg');
-    console.log(img)
-    //const w = img.width;
-    //const h = img.height;
-    //bookImg.src = getBookCoverImage(book.cover_i)
-    bookImg.alt = `${book.title} cover image`
 }
 
 const renderDefaultBookMenu = () => {
