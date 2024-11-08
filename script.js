@@ -1,4 +1,3 @@
-
 function changeActiveTab() {
     const tabs = document.querySelectorAll('.tab-names h2');
 
